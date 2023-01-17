@@ -1,7 +1,7 @@
 {
   "name": "character_cubes",
-  "private": true,
-  "homepage": "https://jeremywesfield.github.io/Rick-and-Morty-3D-cubes",
+  "private": false,
+  "homepage": "https://jeremywesfield.github.io/rick-and-morty-3d-cubes",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
