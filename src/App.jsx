@@ -12,9 +12,13 @@ function App() {
 
   useEffect(() => {
     if(!rickAndMortyData){
-      const theSmiths = getCharacter([ 1, 2, 3, 4, 5 ]).then((res)=> {
-        setRickAndMortyData(res.data);
-      })
+      try{
+        const theSmiths = getCharacter([ 1, 2, 3, 4, 5 ]).then((res)=> {
+          setRickAndMortyData(res.data);
+        })
+      } catch {
+        alert("Please refresh the page");
+      }
     }
   }, [])
 
