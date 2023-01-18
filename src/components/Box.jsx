@@ -29,6 +29,8 @@ export function Box({ cube, data, setOpen, setSelectedCharacter }) {
       setSelectedCharacter(data);
       setOpen(true);
     }
+
+    if(data?.name === 'Abadango Cluster Princess') data.name = 'Cluster Princess';
   
     return (
       <>
