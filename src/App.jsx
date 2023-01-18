@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="app">
       <CharacterBioModal open={open} setOpen={setOpen} selectedCharacter={selectedCharacter} />
-      <div style={{ height: '50%', width: '100%' }}>
+      <div style={{ height: '100%', width: '100%', backgroundColor: 'black' }}>
         <Scene rickAndMortyData={rickAndMortyData} setOpen={setOpen} setSelectedCharacter={setSelectedCharacter}/>
       </div>
       <SelectFilter rickAndMortyData={rickAndMortyData} setRickAndMortyData={setRickAndMortyData} />

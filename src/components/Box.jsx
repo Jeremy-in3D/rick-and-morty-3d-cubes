@@ -34,7 +34,7 @@ export function Box({ cube, data, setOpen, setSelectedCharacter }) {
   
     return (
       <>
-        <Text fontSize={textPosition.fontSize} color='black' scale={[1, 1, 1]} anchorX='left' anchorY="middle" position={[textPosition.x-3, textPosition.y, cubePosition.z]}>{data?.name}</Text>
+        <Text fontSize={textPosition.fontSize} color='white' scale={[1, 1, 1]} anchorX='left' anchorY="middle" position={[textPosition.x-3, textPosition.y, cubePosition.z]}>{data?.name}</Text>
         <mesh position={[cubePosition.x,cubePosition.y,cubePosition.z]} ref={meshRef} onPointerOver={()=> setHover(true)} onPointerOut={()=> setHover(false)} onClick={handleClick}>
           <boxGeometry args={[1,1,1]} />
           <meshStandardMaterial  map={colorMap} />
