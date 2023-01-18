@@ -1,10 +1,13 @@
 import { Canvas } from '@react-three/fiber';
 import { Box } from './Box';
+import { Stars, OrbitControls } from '@react-three/drei';
 
 export function Scene({ rickAndMortyData, setOpen, setSelectedCharacter}) {
     return (
         <>
             <Canvas>
+                <OrbitControls />
+                <Stars />
                 <ambientLight intensity={0.1} />
                 <pointLight position={[3,3,3]} />
                 <Box cube='1' data={rickAndMortyData ? rickAndMortyData[0] : null} setOpen={setOpen} setSelectedCharacter={setSelectedCharacter} />
