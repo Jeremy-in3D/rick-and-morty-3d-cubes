@@ -8,4 +8,11 @@ HOW TO RUN LOCALLY:
 
 
 
+created with React, Three.js, react-three-fiber.
+
+For more Characters to appear on the cubes, just change the size of the array in the useEffect in App.jsx.
+
+and don't forget to - Click, drag the scene around, zoom in and out, and enjoy :)
+
+
 >
