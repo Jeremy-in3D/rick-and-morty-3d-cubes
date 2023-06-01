@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import { getCharacter } from 'rickmortyapi';
-import { SelectFilter } from './components/SelectFilter';
-import { CharacterBioModal } from './components/CharacterBioModal';
-import { Scene } from './components/Scene';
+import { useState, useEffect } from "react";
+import "./App.css";
+import { getCharacter } from "rickmortyapi";
+import { SelectFilter } from "./components/SelectFilter";
+import { CharacterBioModal } from "./components/CharacterBioModal";
+import { Scene } from "./components/Scene";
 
 function App() {
   const [rickAndMortyData, setRickAndMortyData] = useState();
@@ -11,26 +11,38 @@ function App() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if(!rickAndMortyData){
+    if (!rickAndMortyData) {
+      let testVal;
       try {
-          const theSmiths = getCharacter([...Array(10).keys()]).then((res)=> {
-            setRickAndMortyData(res.data);
-          })
+        const theSmiths = getCharacter([...Array(10).keys()]).then((res) => {
+          setRickAndMortyData(res.data);
+        });
       } catch {
         alert("Please refresh the page");
       }
     }
-  }, [])
+  }, []);
 
   return (
     <div className="app">
-      <CharacterBioModal open={open} setOpen={setOpen} selectedCharacter={selectedCharacter} />
-      <div style={{ height: '100%', width: '100%', backgroundColor: 'black' }}>
-        <Scene rickAndMortyData={rickAndMortyData} setOpen={setOpen} setSelectedCharacter={setSelectedCharacter}/>
+      <CharacterBioModal
+        open={open}
+        setOpen={setOpen}
+        selectedCharacter={selectedCharacter}
+      />
+      <div style={{ height: "100%", width: "100%", backgroundColor: "black" }}>
+        <Scene
+          rickAndMortyData={rickAndMortyData}
+          setOpen={setOpen}
+          setSelectedCharacter={setSelectedCharacter}
+        />
       </div>
-      <SelectFilter rickAndMortyData={rickAndMortyData} setRickAndMortyData={setRickAndMortyData} />
+      <SelectFilter
+        rickAndMortyData={rickAndMortyData}
+        setRickAndMortyData={setRickAndMortyData}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
